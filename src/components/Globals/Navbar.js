@@ -35,7 +35,7 @@ export default class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="navbar navbar-expand-sm bg-light navbar-light">
+      <nav className="navbar navbar-expand-sm bg-light navbar-light d-flex flex-column">
         <Link to="/" className="navbar-brand">
           <img src={logo} alt="logo" />
         </Link>
@@ -50,7 +50,7 @@ export default class Navbar extends Component {
           <ul className="navbar-nav mx-auto">
             {this.state.links.map(link => {
               return (
-                <li key={link.id} className="nav-item">
+                <li key={link.id} className="nav-item mx-3">
                   <Link to={link.path} className="nav-link text-capitalize">
                     {link.text}
                   </Link>
