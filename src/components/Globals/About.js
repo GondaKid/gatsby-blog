@@ -1,25 +1,22 @@
 import React from "react"
 import ava from "../../images/about-ava.svg"
+
 export default function AboutUs() {
   return (
-    <section className="py-5">
+    <section className="about-section">
       <div className="container">
-        <div className="col-10 col-sm-8 mx-auto">
-          <div className="row">
-            <div className="col-4">
-              <img src={ava} className="w-100" alt="About-us-img" />
-            </div>
-            <div className="col-8 d-flex align-items-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quis
-              sunt aut dolorem magnam error laudantium nam tempore, voluptatibus
-              odit eum doloribus quaerat nihil labore incidunt laborum
-              accusantium iste corrupti corporis molestias fugit cumque officia
-              sit. Ad animi ducimus perspiciatis, qui laudantium illum
-              praesentium distinctio? Provident recusandae quo omnis nesciunt!
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A,
-              totam?Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Quo, vel?
-            </div>
+        <div className="row about-wrapper">
+          <img src={ava} className="mx-ava" height="230" alt="About-us-img" />
+          <div className="text-center mr-md-4">
+            Hi, I'm Sarah. <br></br>
+            Building startups and teams, currently based in 📍Hong Kong via San
+            Francisco, New York City, London, and Chicago. Alumna of Columbia
+            University and Oxford University. Intrigued by design, traveling,
+            photography, classical music, strategy, writing, art, armchair
+            philosophy, fabulous food, and even better conversations. Seeking to
+            be inspired, to envision the unlikely, to work hard for things that
+            are worth it, and to be surrounded by those who bring out the best
+            in me. Say hi on Twitter @sarahlichang
           </div>
         </div>
       </div>

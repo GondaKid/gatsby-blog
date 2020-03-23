@@ -3,8 +3,12 @@ import { Link } from "gatsby"
 import logo from "../../images/logo.svg"
 import logo_sm from "../../images/logo-sm.svg"
 
+import "../style/layout.scss"
+
 export default class Navbar extends Component {
   state = {
+    scrolled: false,
+    navCss: "container py-md-4 py-3 px-0",
     links: [
       {
         id: 1,
@@ -34,6 +38,21 @@ export default class Navbar extends Component {
     ],
   }
 
+  handleScroll = () => {
+    const IsTop = window.scrollY < 180
+    if (IsTop !== true) {
+      this.setState({
+        scrolled: true,
+        navCss: "container py-md-4 py-3 px-0 sticky",
+      })
+    } else {
+      this.setState({
+        scrolled: false,
+        navCss: "container py-md-4 py-3 px-0",
+      })
+    }
+  }
+
   render() {
     return (
       <section className="header-container py-4 pt-md-5">
@@ -55,11 +74,11 @@ export default class Navbar extends Component {
             </div>
           </div>
 
-          <div className="container py-md-4 py-3 px-0">
-            <ul className="nav d-flex flex-nowrap justify-content-around justify-content-md-center">
+          <div id="Navbar" className={this.navCss} onScroll={this.handleScroll}>
+            <ul className="nav d-flex flex-nowrap justify-content-start justify-content-md-center nav-scroll">
               {this.state.links.map(link => {
                 return (
-                  <li key={link.id} className="nav-item mx-md-5">
+                  <li key={link.id} className="nav-item mx-3 mx-md-5">
                     <Link
                       to={link.path}
                       className="nav-link nav-text text-uppercase"

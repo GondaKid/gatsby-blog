@@ -1,13 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:600|Muli:400|Open+Sans:300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600|Muli:400|Open+Sans:400&display=swap");
 
 :root {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 $mainBlue: #e1f4f3;
 $mainBlack: #474747;
 $mainGrey: #706c61;
 $mainWhite: #fff;
+
+$breakpoint-phone: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-computer: 992px;
 
 * {
   margin: 0;
@@ -32,7 +36,7 @@ h6 {
 
 .nav-text {
   font-family: "Muli", sans-serif;
-  font-size: 1em;
+  font-size: 12px;
   color: $mainBlack !important;
   padding: 0.25em;
   white-space: nowrap;
@@ -78,4 +82,60 @@ h6 {
 
 .navbar {
   padding: 0.5rem;
+}
+
+.nav-scroll {
+  overflow: auto;
+  white-space: nowrap !important;
+}
+
+.about-section {
+  padding: 50px 20px;
+  grid-column: 2/3;
+}
+
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-self: center;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .about-wrapper {
+    grid-template-columns: 5fr 8fr;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .mx-ava {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .mx-ava {
+    margin-left: 2rem;
+    margin-right: auto;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 900px) 1fr;
+}
+
+.content {
+  grid-column: 2/3;
+  padding: 40px 20px;
+}
+
+.full {
+  grid-column: 1/4;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
 }
