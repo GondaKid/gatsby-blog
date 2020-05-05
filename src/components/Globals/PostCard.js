@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-// import "../style/PostCard.scss"
+import "../style/PostCard.scss"
 
 const PostCard = ({ image, title, subtitle, slug }) => {
   return (
@@ -11,7 +11,7 @@ const PostCard = ({ image, title, subtitle, slug }) => {
         <h5 className="card-title">{title}</h5>
         <p className="card-text">{subtitle}</p>
         <Link to={slug}>
-          <div className="btn btn-primary">Read More</div>
+          <div className="card-btn">Read More</div>
         </Link>
       </div>
     </div>

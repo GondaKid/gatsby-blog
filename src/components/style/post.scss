@@ -1,0 +1,18 @@
+.content {
+  grid-column: 3/4;
+  padding: 40px 20px;
+}
+
+.full {
+  grid-column: 2/5;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+// .sticky + .wrapper {
+//   padding-top: 100px;
+// }

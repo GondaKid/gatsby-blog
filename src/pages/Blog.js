@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostCard from "../components/Globals/PostCard"
-import "../components/style/layout.scss"
+import "../components/style/post.scss"
 
 const BlogIndex = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -46,7 +46,6 @@ export const pageQuery = graphql`
         node {
           title
           subtitle
-          author
           slug
           image {
             fluid {

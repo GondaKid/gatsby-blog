@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import "../components/style/layout.scss"
+import "../components/style/post.scss"
 
 //rendering contenful richtext
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
@@ -19,10 +19,14 @@ class BlogPost extends React.Component {
     return (
       <Layout title={siteTitle}>
         <SEO title={post.title} description={post.subtitle} />
-        <Img fluid={post.image.fluid} className="full" />
-        <div className="content">
+
+        <div className="full text-center">
           <h1> {post.title}</h1>
-          <div>{documentToReactComponents(post.content.json)}</div>
+          <h3> {post.date} </h3>
+          <Img fluid={post.image.fluid} style={{ zIndex: -1 }} />
+        </div>
+        <div div className="content">
+          {documentToReactComponents(post.content.json)}
 
           <nav>
             <ul
@@ -63,14 +67,12 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
       }
     }
 
     contentfulPost(slug: { eq: $slug }) {
       title
-      subtitle
-      author
+      date
       image {
         fluid {
           ...GatsbyContentfulFluid
@@ -79,6 +81,7 @@ export const pageQuery = graphql`
       content {
         json
       }
+      subtitle
     }
   }
 `

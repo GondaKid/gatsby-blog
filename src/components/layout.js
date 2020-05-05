@@ -4,15 +4,16 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import "./style/bootstrap.min.css"
 import "./style/layout.scss"
+import { theme, ThemeProvider, CSSReset } from "@chakra-ui/core"
 
 import Navbar from "./Globals/Navbar"
-import styled from "styled-components"
 
 const Layout = ({ children }) => (
-  <>
+  <ThemeProvider>
+    <CSSReset />
     <Navbar />
     <div className="wrapper">{children}</div>
-  </>
+  </ThemeProvider>
 )
 
 Layout.propTypes = {

@@ -38,5 +38,7 @@ module.exports = {
         downloadLocal: true,
       },
     },
+    "gatsby-plugin-chakra-ui",
+    "gatsby-plugin-optimize-svgs",
   ],
 }
